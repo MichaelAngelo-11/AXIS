@@ -11,10 +11,10 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# Database
-*.db
-*.sqlite
-*.sqlite3
+# Database (uncommented to include database in repository)
+# *.db
+# *.sqlite
+# *.sqlite3
 
 # Build outputs
 frontend/build/

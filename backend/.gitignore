@@ -4,9 +4,9 @@ node_modules/
 # Environment variables
 .env
 
-# Database
-database/*.db
-database/*.db-journal
+# Database (uncommented to include database in repository)
+# database/*.db
+# database/*.db-journal
 
 # Logs
 logs/
