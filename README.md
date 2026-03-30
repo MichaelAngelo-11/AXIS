@@ -2,7 +2,7 @@
 
 A modern, gamified learning platform designed to boost student engagement and prepare high school students for real-world success.
 
-## 🚀 Features
+##  Features
 
 - **Gamified Learning**: Earn XP, unlock badges, and level up as you learn
 - **Progress Tracking**: Real-time tracking of academic performance
