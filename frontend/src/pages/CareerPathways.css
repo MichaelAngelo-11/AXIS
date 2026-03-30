@@ -1,0 +1,200 @@
+/* Career Pathways Specific Styles */
+
+.tracked-careers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.tracked-career-card {
+  background-color: #e8f5e9;
+  border: 2px solid var(--primary-green);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.tracked-career-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.careers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.career-card {
+  background-color: var(--white);
+  border: 2px solid var(--gray);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.career-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-green);
+}
+
+.career-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.career-card-header h3 {
+  color: var(--text-dark);
+  font-size: 1.4rem;
+  margin: 0;
+  flex: 1;
+}
+
+.tracking-badge {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.career-description {
+  color: var(--dark-gray);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+}
+
+.career-info {
+  background-color: var(--light-gray);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-md);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  color: var(--text-dark);
+}
+
+.info-label {
+  font-weight: 600;
+  margin-right: var(--spacing-sm);
+}
+
+.career-skills {
+  margin-bottom: var(--spacing-lg);
+}
+
+.career-skills strong {
+  display: block;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.skill-tag {
+  background-color: var(--light-gray);
+  color: var(--text-dark);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--gray);
+}
+
+.career-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+}
+
+.career-actions button {
+  flex: 1;
+}
+
+/* Career Progress */
+.career-progress {
+  margin: var(--spacing-md) 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Career Modal */
+.career-modal {
+  max-width: 700px;
+}
+
+.modal-body {
+  padding: var(--spacing-xl);
+}
+
+.career-details-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.career-details-section h3 {
+  color: var(--primary-green);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.career-details-section p {
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.career-details-section .skills-list {
+  margin-top: var(--spacing-md);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tracked-careers-grid,
+  .careers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-actions {
+    flex-direction: column;
+  }
+
+  .career-actions button {
+    width: 100%;
+  }
+
+  .career-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tracking-badge {
+    align-self: flex-start;
+  }
+}
