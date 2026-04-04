@@ -59,7 +59,7 @@ function TeacherDashboard() {
   const fetchCourses = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${API_URL}/api/courses/my-courses`, {
+      const response = await fetch(`${API_URL}/courses/my-courses`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -92,7 +92,7 @@ function TeacherDashboard() {
       
       // Fetch students for each course and track unique IDs
       for (const course of coursesArray) {
-        const res = await fetch(`${API_URL}/api/courses/${course.id}/students`, {
+        const res = await fetch(`${API_URL}/courses/${course.id}/students`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         
@@ -115,7 +115,7 @@ function TeacherDashboard() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${API_URL}/api/courses`, {
+      const response = await fetch(`${API_URL}/courses`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -145,7 +145,7 @@ function TeacherDashboard() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${API_URL}/api/courses/${selectedCourse.id}/modules`, {
+      const response = await fetch(`${API_URL}/courses/${selectedCourse.id}/modules`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -177,7 +177,7 @@ function TeacherDashboard() {
   const fetchCourseStudents = async (courseId, courseName) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${API_URL}/api/courses/${courseId}/students`, {
+      const response = await fetch(`${API_URL}/courses/${courseId}/students`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -200,7 +200,7 @@ function TeacherDashboard() {
     const newStatus = !course.is_published;
     
     try {
-      const response = await fetch(`${API_URL}/api/courses/${course.id}/publish`, {
+      const response = await fetch(`${API_URL}/courses/${course.id}/publish`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -238,7 +238,7 @@ function TeacherDashboard() {
     
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${API_URL}/api/courses/${editingCourse.id}`, {
+      const response = await fetch(`${API_URL}/courses/${editingCourse.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -270,7 +270,7 @@ function TeacherDashboard() {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`${API_URL}/api/courses/${courseId}`, {
+      const response = await fetch(`${API_URL}/courses/${courseId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
