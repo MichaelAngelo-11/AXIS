@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import API_URL from '../config';
 import './Dashboard.css';
 import './CourseView.css';
-
-const API_URL = 'http://localhost:5000/api';
 
 function CourseView() {
   const navigate = useNavigate();

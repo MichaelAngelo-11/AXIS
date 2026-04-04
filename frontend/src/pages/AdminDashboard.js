@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_URL from '../config';
 import './Dashboard.css';
-
-const API_URL = 'http://localhost:5000/api';
 
 function AdminDashboard() {
   const navigate = useNavigate();
