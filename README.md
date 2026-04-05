@@ -2,6 +2,19 @@
 
 A modern, gamified learning platform designed to boost student engagement and prepare high school students for real-world success.
 
+## Live Demo
+
+**Try it now!**
+- **Frontend:** https://axis-1-lslu.onrender.com
+- **Backend API:** https://axis-5acz.onrender.com
+
+**Test Accounts:**
+- Student: `student@axis.com` / `student123`
+- Teacher: `teacher@axis.com` / `teacher123`
+- Admin: `admin@axis.com` / `admin123`
+
+> **Note:** Backend may take 30-60 seconds to wake up on first request (free tier limitation).
+
 ##  Features
 
 - **Gamified Learning**: Earn XP, unlock badges, and level up as you learn
@@ -13,7 +26,7 @@ A modern, gamified learning platform designed to boost student engagement and pr
 - **Role-Based Access**: Support for Students, Teachers, and Administrators
 - **Leaderboard**: Compete with peers and see top performers
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React.js** - UI framework
@@ -62,7 +75,7 @@ AXIS/
 └── README.md                       # This file
 ```
 
-## 🎮 Database Schema
+## Database Schema
 
 ### Core Tables
 - **users** - Student, teacher, and admin accounts
@@ -76,7 +89,7 @@ AXIS/
 - **career_paths** - Career pathway information with required skills
 - **student_career_progress** - Track student progress toward career goals
 
-## 🚀 Getting Started
+## Getting Started
 
 ### What You Need
 - **Node.js** (version 14 or higher) - Download from https://nodejs.org/
@@ -130,7 +143,7 @@ npm start
 
 ---
 
-#### **Step 3: Setup Frontend (Website)**
+#### **Step 3: Setup Frontend **
 
 Open a **NEW** terminal window and run:
 
@@ -212,7 +225,46 @@ npm run seed
 - Make sure backend is running (check Terminal 1)
 - Run `npm run seed` again in backend folder
 
-## 📡 API Endpoints
+---
+
+## 🚀 Deployment on Render.com
+
+The app is deployed on Render with separate services for frontend and backend.
+
+### Production URLs
+- **Frontend:** https://axis-1-lslu.onrender.com
+- **Backend API:** https://axis-5acz.onrender.com
+
+### Deployment Configuration
+
+**Backend Service:**
+- Platform: Render Web Service
+- Build Command: `npm install`
+- Start Command: `npm start`
+- Environment Variables:
+  - `NODE_ENV=production`
+  - `JWT_SECRET=<secure-key>`
+  - `DB_PATH=./database/axis.db`
+  - `FRONTEND_URL=https://axis-1-lslu.onrender.com`
+
+**Frontend Service:**
+- Platform: Render Static Site
+- Build Command: `npm install && npm run build`
+- Publish Directory: `build`
+- Environment Variables:
+  - `REACT_APP_API_URL=https://axis-5acz.onrender.com`
+
+### Free Tier Notes
+⚠️ Backend sleeps after 15 minutes of inactivity
+- First request takes 30-60 seconds to wake up
+- Subsequent requests are fast
+- Database persists across sleeps
+
+
+
+---
+
+##  API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Register new user
@@ -246,31 +298,16 @@ npm run seed
 - `DELETE /api/careers/:id/untrack` - Stop tracking a career
 - `GET /api/careers/:id/recommended-courses` - Get recommended courses for career
 
-## 🎨 Color Theme
 
-- Primary Green: `#27ae60`
-- Dark Green: `#229954`
-- White: `#ffffff`
-- Light Gray: `#f8f9fa`
-- Text Dark: `#2c3e50`
 
-## 🏆 Gamification System
+##  Gamification System
 
 ### XP & Levels
 - Students earn XP by completing modules
 - Every 100 XP = 1 Level
 - Each module has a configurable XP value
 
-### Badges
-- 🌱 **Beginner** - Complete your first module
-- ⚡ **Quick Learner** - Earn 100 XP
-- 📚 **Knowledge Seeker** - Earn 500 XP
-- 🎓 **Master Student** - Earn 1000 XP
-- 🎯 **Challenge Accepted** - Complete 5 modules
-- 💪 **Dedicated** - Complete 20 modules
-- ⭐ **Expert** - Reach Level 10
-
-## 👥 User Roles
+##  User Roles
 
 ### Student
 - Enroll in courses
@@ -289,102 +326,15 @@ npm run seed
 - Manage all users and courses
 - System configuration
 
-## 🔒 Security
+##  Security
 
 - Passwords hashed with bcrypt
 - JWT tokens for authentication
 - Role-based access control
 - Input validation on all endpoints
 
-## 📝 Environment Variables
 
-Create a `.env` file in the backend directory:
-
-```env
-PORT=5000
-NODE_ENV=development
-JWT_SECRET=your-super-secret-key
-DB_PATH=./database/axis.db
-FRONTEND_URL=http://localhost:3000
-```
-
-## 🎯 Completed Features
-
-### Phase 1: Core Foundation ✅
-- ✅ User authentication (register/login)
-- ✅ Role-based access (student/teacher/admin)
-- ✅ Course creation and management
-- ✅ Module system with XP rewards
-- ✅ Progress tracking
-- ✅ Badge system
-- ✅ Leaderboard
-- ✅ Responsive landing page
-
-### Phase 2: Career Pathways ✅
-- ✅ Career discovery and exploration
-- ✅ Career tracking system
-- ✅ Automatic progress calculation
-- ✅ Skill acquisition tracking
-- ✅ Real-time progress updates
-- ✅ 6 pre-seeded career paths
-
-## 🔜 Future Enhancements (Phase 3-4)
-
-- [ ] Advanced feedback system
-- [ ] Interactive challenges
-- [ ] Real-time notifications
-- [ ] File uploads for course materials
-- [ ] Student-teacher messaging
-- [ ] Analytics dashboard
-- [ ] Enhanced career recommendations with AI
-- [ ] Mobile app
-
-## 📚 Documentation
-
-- **[Course Creation Guide](COURSE_CREATION_GUIDE.md)** - Complete guide for teachers
-- **[Student Enrollment Guide](STUDENT_ENROLLMENT_GUIDE.md)** - Guide for students
-- **[Career Pathways Guide](CAREER_PATHWAYS_GUIDE.md)** - Detailed career pathways documentation
-- **[Quick Start: Career Pathways](QUICK_START_CAREER_PATHWAYS.md)** - Quick testing guide
-- **[Implementation Plan](implementation-plan.md)** - Technical architecture & roadmap
-
-## 🎓 Career Pathways Feature
-
-The Career Pathways system helps students:
-- **Explore** 6 different career options with salary and growth data
-- **Track** multiple careers simultaneously
-- **Monitor** automatic progress based on completed courses
-- **Align** their learning with real-world career requirements
-
-### How It Works
-1. Students browse and select careers to track
-2. As they complete modules, the system analyzes content
-3. Progress updates automatically when skills match career requirements
-4. Students see their advancement toward each career goal (0-100%)
-
-### Pre-Loaded Careers
-- Software Developer (22% growth expected)
-- Data Scientist (31% growth expected)
-- Healthcare Professional (16% growth expected)
-- Business Analyst (11% growth expected)
-- Mechanical Engineer (7% growth expected)
-- Digital Marketing Specialist (19% growth expected)
-
-For detailed information, see [CAREER_PATHWAYS_GUIDE.md](CAREER_PATHWAYS_GUIDE.md)
-
-## 👨‍💻 Developer
+##  Developer
 
 **Peter Michael Angelo Rucakibungo**  
-African Leadership University  
-2026
 
-## 📄 License
-
-MIT License - feel free to use this project for educational purposes.
-
-## 🤝 Contributing
-
-This is a university project, but suggestions and feedback are welcome!
-
----
-
-**Built with ❤️ for transforming education in Africa**
